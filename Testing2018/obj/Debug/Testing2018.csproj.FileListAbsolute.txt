@@ -12,3 +12,10 @@ D:/OneDrive - JAMK/ShareFolder/VSEsimerkit/Testing2018/Testing2018/obj/Debug/Tes
 /Users/kimmokissa/Desktop/Testing/Testing2018/obj/Debug/Testing2018.csproj.CoreCompileInputs.cache
 /Users/kimmokissa/Desktop/Testing/Testing2018/obj/Debug/Testing2018.exe
 /Users/kimmokissa/Desktop/Testing/Testing2018/obj/Debug/Testing2018.pdb
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\Testing2018\bin\Debug\Testing2018.exe.config
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\Testing2018\bin\Debug\Testing2018.exe
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\Testing2018\bin\Debug\Testing2018.pdb
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\Testing2018\obj\Debug\Testing2018.csprojAssemblyReference.cache
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\Testing2018\obj\Debug\Testing2018.csproj.CoreCompileInputs.cache
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\Testing2018\obj\Debug\Testing2018.exe
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\Testing2018\obj\Debug\Testing2018.pdb

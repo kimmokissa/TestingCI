@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Testing2018
 {
-    class Armour
+    public class Armour
     {
         private String name;
         private String desc; // briefly about the eqs appearance

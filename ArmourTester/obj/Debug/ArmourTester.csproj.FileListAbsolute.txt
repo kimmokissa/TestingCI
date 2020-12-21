@@ -1,0 +1,17 @@
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\ArmourTester.dll
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\ArmourTester.pdb
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Testing2018.exe
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Testing2018.pdb
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Testing2018.exe.config
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\obj\Debug\ArmourTester.csprojAssemblyReference.cache
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\obj\Debug\ArmourTester.csproj.CoreCompileInputs.cache
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\obj\Debug\ArmourTester.csproj.CopyComplete
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\obj\Debug\ArmourTester.dll
+C:\Users\kimmo\Desktop\Testing2018\TestingCI\ArmourTester\obj\Debug\ArmourTester.pdb
