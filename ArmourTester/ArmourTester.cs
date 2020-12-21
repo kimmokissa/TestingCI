@@ -25,5 +25,32 @@ namespace ArmourTester
             if (slot != 2) Assert.Fail();
 
         }
+        [TestMethod]
+        public void TestCondition()
+        {
+            Armour ar = new Armour("Jorma", "Kokkeli", 20, 2, 2);
+            string condition = ar.getCondition();
+
+            Assert.AreEqual("Mint", condition);
+
+        }
+
+        [TestMethod]
+        public void TestTakeDamageAndBreakArmor()
+        {
+            /*
+             * Test take damage function by creating new Armour and assigning it damage equal
+             * to its pProt value. It should now be Destroyed.
+             */
+
+            int takeDam = 20;
+            Armour ar = new Armour("Jorma", "Kokkeli", takeDam, 2, 2);
+
+            ar.takeDam(takeDam);
+            string condition = ar.getCondition();
+
+            Assert.AreEqual("Destroyed", condition);
+
+        }
     }
 }

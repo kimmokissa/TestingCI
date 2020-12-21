@@ -45,7 +45,6 @@ namespace Testing2018
 
         }
 
-
         /*
          * Method for creating textural information about the condition of the eq.
          * Levels:
