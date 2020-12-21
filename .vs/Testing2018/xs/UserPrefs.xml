@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{545B2E65-E9A7-4CAD-84BC-02E623A90B83}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Testing2018/Program.cs">
+    <Files>
+      <File FileName="Testing2018/Armour.cs" Line="1" Column="1" />
+      <File FileName="Testing2018/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Testing2018" expanded="True">
+            <Node name="Testing2018" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Testing2018 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

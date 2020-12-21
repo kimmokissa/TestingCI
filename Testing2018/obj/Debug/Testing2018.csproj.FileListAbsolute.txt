@@ -1,0 +1,14 @@
+D:/OneDrive - JAMK/ShareFolder/VSEsimerkit/Testing2018/Testing2018/bin/Debug/Testing2018.exe.config
+D:/OneDrive - JAMK/ShareFolder/VSEsimerkit/Testing2018/Testing2018/bin/Debug/Testing2018.exe
+D:/OneDrive - JAMK/ShareFolder/VSEsimerkit/Testing2018/Testing2018/bin/Debug/Testing2018.pdb
+D:/OneDrive - JAMK/ShareFolder/VSEsimerkit/Testing2018/Testing2018/obj/Debug/Testing2018.csprojAssemblyReference.cache
+D:/OneDrive - JAMK/ShareFolder/VSEsimerkit/Testing2018/Testing2018/obj/Debug/Testing2018.csproj.CoreCompileInputs.cache
+D:/OneDrive - JAMK/ShareFolder/VSEsimerkit/Testing2018/Testing2018/obj/Debug/Testing2018.exe
+D:/OneDrive - JAMK/ShareFolder/VSEsimerkit/Testing2018/Testing2018/obj/Debug/Testing2018.pdb
+/Users/kimmokissa/Desktop/Testing/Testing2018/bin/Debug/Testing2018.exe.config
+/Users/kimmokissa/Desktop/Testing/Testing2018/bin/Debug/Testing2018.exe
+/Users/kimmokissa/Desktop/Testing/Testing2018/bin/Debug/Testing2018.pdb
+/Users/kimmokissa/Desktop/Testing/Testing2018/obj/Debug/Testing2018.csprojAssemblyReference.cache
+/Users/kimmokissa/Desktop/Testing/Testing2018/obj/Debug/Testing2018.csproj.CoreCompileInputs.cache
+/Users/kimmokissa/Desktop/Testing/Testing2018/obj/Debug/Testing2018.exe
+/Users/kimmokissa/Desktop/Testing/Testing2018/obj/Debug/Testing2018.pdb
