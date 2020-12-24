@@ -7,28 +7,11 @@ namespace ArmourTester
     [TestClass]
     public class ArmourTester
     {
+
         [TestMethod]
-        public void TestLevel1()
+        public void TestConditionMint()
         {
-            Armour ar = new Armour("Jorma", "Kokkeli", 20, 2, 2);
-            int lvl = ar.getLevel();
-
-            if (lvl != 2) Assert.Fail();
-
-        }
-        [TestMethod]
-        public void TestSlot1()
-        {
-            Armour ar = new Armour("Jorma", "Kokkeli", 20, 2, 2);
-            int slot = ar.getSlot();
-
-            if (slot != 2) Assert.Fail();
-
-        }
-        [TestMethod]
-        public void TestCondition()
-        {
-            Armour ar = new Armour("Jorma", "Kokkeli", 20, 2, 2);
+            Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
             string condition = ar.getCondition();
 
             Assert.AreEqual("Mint", condition);
@@ -36,20 +19,56 @@ namespace ArmourTester
         }
 
         [TestMethod]
-        public void TestTakeDamageAndBreakArmor()
+        public void TestConditionPoor()
         {
-            /*
-             * Test take damage function by creating new Armour and assigning it damage equal
-             * to its pProt value. It should now be Destroyed.
-             */
+            int takeDam = 90;
+            int prot = 100;
+  
+            Armour ar = new Armour("Jorma", "Kokkeli", prot, 2, 2);
 
-            int takeDam = 20;
+            ar.takeDam(takeDam);
+            string condition = ar.getCondition();
+
+            Assert.AreEqual("Poor", condition);
+
+        }
+
+        [TestMethod]
+        public void TestConditionDestroyed()
+        {
+            int takeDam = 100;
             Armour ar = new Armour("Jorma", "Kokkeli", takeDam, 2, 2);
 
             ar.takeDam(takeDam);
             string condition = ar.getCondition();
 
             Assert.AreEqual("Destroyed", condition);
+
+        }
+        [TestMethod]
+        public void TestRepairDestroyedItemReturnsExcellent()
+        {
+            int takeDam = 100;
+            Armour ar = new Armour("Jorma", "Kokkeli", takeDam, 2, 2);
+
+            ar.takeDam(takeDam);
+            
+            ar.repair(81);
+            string condition = ar.getCondition();
+            Assert.AreEqual("Excellent", condition);
+
+        }
+        [TestMethod]
+        public void TestOveRepairExcellentItemReturnsMint()
+        {
+            int takeDam = 20;
+            Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
+
+            ar.takeDam(takeDam);
+            
+            ar.repair(105);
+            string condition = ar.getCondition();
+            Assert.AreEqual("Mint", condition);
 
         }
     }
