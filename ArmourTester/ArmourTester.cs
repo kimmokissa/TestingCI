@@ -15,7 +15,6 @@ namespace ArmourTester
             string condition = ar.getCondition();
 
             Assert.AreEqual("Mint", condition);
-
         }
 
         [TestMethod]
@@ -30,7 +29,18 @@ namespace ArmourTester
             string condition = ar.getCondition();
 
             Assert.AreEqual("Poor", condition);
+        }
 
+        [TestMethod]
+        public void TestCurrentProt()
+        {
+            // Tests that the current protection is the assumed 10 after taking 10 damage when having starting prot of 20.
+            int takeDam = 10;
+            Armour ar = new Armour("Jorma", "Kokkeli", 20, 2, 2);
+
+            ar.takeDam(takeDam);
+            int currentCond = ar.getCurProt();
+            Assert.AreEqual(10, currentCond);
         }
 
         [TestMethod]
@@ -38,12 +48,10 @@ namespace ArmourTester
         {
             int takeDam = 100;
             Armour ar = new Armour("Jorma", "Kokkeli", takeDam, 2, 2);
-
             ar.takeDam(takeDam);
             string condition = ar.getCondition();
 
             Assert.AreEqual("Destroyed", condition);
-
         }
         [TestMethod]
         public void TestRepairDestroyedItemReturnsExcellent()
@@ -56,20 +64,50 @@ namespace ArmourTester
             ar.repair(81);
             string condition = ar.getCondition();
             Assert.AreEqual("Excellent", condition);
-
         }
+
         [TestMethod]
-        public void TestOveRepairExcellentItemReturnsMint()
+        public void TestOveRepairExcellentItemReturns100()
         {
+            // Test that the repair method doesn't over repair the armor above the maxProt value.
+
             int takeDam = 20;
             Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
 
             ar.takeDam(takeDam);
             
             ar.repair(105);
-            string condition = ar.getCondition();
-            Assert.AreEqual("Mint", condition);
 
+            int condition = ar.getCurProt();
+            Assert.AreEqual(100, condition);
+        }
+
+        [TestMethod]
+        public void TestNegativeRepair()
+        {
+            // Tests if the repair method takes negative int
+
+            Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
+
+
+            ar.repair(-120);
+
+            int condition = ar.getCurProt();
+            Assert.AreNotEqual(0, condition);
+        }
+
+        [TestMethod]
+        public void TestNegativeDamage()
+        {
+            // Tests if the repair method takes negative int
+
+            Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
+
+
+            ar.takeDam(-120);
+
+            int condition = ar.getCurProt();
+            Assert.AreEqual(100, condition);
         }
     }
 }
