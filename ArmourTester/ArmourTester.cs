@@ -9,55 +9,100 @@ namespace ArmourTester
     {
 
         [TestMethod]
-        public void TestConditionMint()
+        public void getCondition_TakesDamageAndRepair_ReturnsMint()
         {
-            Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
-            string condition = ar.getCondition();
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
+            ar.takeDam(10);
+            ar.repair(10);
 
+            string condition = ar.getCondition();
+            
             Assert.AreEqual("Mint", condition);
         }
 
         [TestMethod]
-        public void TestConditionPoor()
+        public void getCondition_TakesDamage_ReturnsExcellent()
         {
-            int takeDam = 90;
-            int prot = 100;
-  
-            Armour ar = new Armour("Jorma", "Kokkeli", prot, 2, 2);
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
+            ar.takeDam(10);
 
-            ar.takeDam(takeDam);
+            string condition = ar.getCondition();
+
+            Assert.AreEqual("Excellent", condition);
+        }
+
+        [TestMethod]
+        public void getCondition_TakesDamage_ReturnsGood()
+        {
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
+            ar.takeDam(30);
+
+            string condition = ar.getCondition();
+
+            Assert.AreEqual("Good", condition);
+        }
+
+        [TestMethod]
+        public void getCondition_TakesDamage_ReturnsAverage()
+        {
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
+            ar.takeDam(60);
+
+            string condition = ar.getCondition();
+
+            Assert.AreEqual("Average", condition);
+        }
+
+        [TestMethod]
+        public void getCondition_TakesDamage_ReturnsWeak()
+        {
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
+            ar.takeDam(80);
+
+            string condition = ar.getCondition();
+
+            Assert.AreEqual("Weak", condition);
+        }
+
+        [TestMethod]
+        public void getCondition_TakesDamage_ReturnsPoor()
+        {
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
+            ar.takeDam(90);
+
             string condition = ar.getCondition();
 
             Assert.AreEqual("Poor", condition);
         }
 
         [TestMethod]
-        public void TestCurrentProt()
+        public void getCondition_TakesDamage_ReturnsDestroyed()
+        {
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
+            ar.takeDam(100);
+            string condition = ar.getCondition();
+
+            Assert.AreEqual("Destroyed", condition);
+        }
+
+        [TestMethod]
+        public void getCurProt_TakeDamage_ReturnsEqual()
         {
             // Tests that the current protection is the assumed 10 after taking 10 damage when having starting prot of 20.
             int takeDam = 10;
-            Armour ar = new Armour("Jorma", "Kokkeli", 20, 2, 2);
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 20, 2, 2);
 
             ar.takeDam(takeDam);
             int currentCond = ar.getCurProt();
             Assert.AreEqual(10, currentCond);
         }
 
-        [TestMethod]
-        public void TestConditionDestroyed()
-        {
-            int takeDam = 100;
-            Armour ar = new Armour("Jorma", "Kokkeli", takeDam, 2, 2);
-            ar.takeDam(takeDam);
-            string condition = ar.getCondition();
 
-            Assert.AreEqual("Destroyed", condition);
-        }
         [TestMethod]
-        public void TestRepairDestroyedItemReturnsExcellent()
+        public void repair_RepairDestroyedItem_ReturnsExcellent()
         {
             int takeDam = 100;
-            Armour ar = new Armour("Jorma", "Kokkeli", takeDam, 2, 2);
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", takeDam, 2, 2);
 
             ar.takeDam(takeDam);
             
@@ -67,47 +112,61 @@ namespace ArmourTester
         }
 
         [TestMethod]
-        public void TestOveRepairExcellentItemReturns100()
+        public void repair_OveRepairExcellentItem_ReturnsEqual()
         {
             // Test that the repair method doesn't over repair the armor above the maxProt value.
 
             int takeDam = 20;
-            Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
 
             ar.takeDam(takeDam);
-            
             ar.repair(105);
-
-            int condition = ar.getCurProt();
-            Assert.AreEqual(100, condition);
+            int maxProt = ar.getMaxProt();
+            int curProt = ar.getCurProt();
+            Assert.AreEqual(maxProt, curProt);
         }
 
         [TestMethod]
-        public void TestNegativeRepair()
+        public void getLevel_GetsArmorLevel_ReturnsEqual()
         {
-            // Tests if the repair method takes negative int
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
 
-            Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
 
+            int level = ar.getLevel();
+            Assert.AreEqual(2, level);
+        }
+
+        // The test below are trivial and makes one think how the Armour.cs is implemented, if one is allowed
+        // to do negative repairing or negative damage intentionally or accidentally, what is the point of
+        // having two separate methods, it could just be replaced with a single method that handles 
+        // the damage taking and repairing, something like "changeCondition" method.
+
+        [TestMethod]
+        public void repair_NegativeRepair_ReturnsNotEqual()
+        {
+            // Tests if the repair method takes negative int or not.
+
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
 
             ar.repair(-120);
+
+            int condition = ar.getCurProt();
+            Assert.AreNotEqual(100, condition);
+        }
+
+        [TestMethod]
+        public void repair_NegativeDamage_ReturnsNotEqual()
+        {
+            // Tests if the repair method takes negative int or not.
+
+            Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
+
+
+            ar.takeDam(-100);
 
             int condition = ar.getCurProt();
             Assert.AreNotEqual(0, condition);
         }
 
-        [TestMethod]
-        public void TestNegativeDamage()
-        {
-            // Tests if the repair method takes negative int
-
-            Armour ar = new Armour("Jorma", "Kokkeli", 100, 2, 2);
-
-
-            ar.takeDam(-120);
-
-            int condition = ar.getCurProt();
-            Assert.AreEqual(100, condition);
-        }
     }
 }
