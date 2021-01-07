@@ -184,5 +184,4 @@ namespace ArmourTester
             Assert.AreEqual(ex.Message, "Name of the item cant be empty");
         }
     }
-
 }

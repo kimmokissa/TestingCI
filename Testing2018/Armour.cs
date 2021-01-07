@@ -42,7 +42,6 @@ namespace Testing2018
             curProt = pProt;
             slot = (pSlot > 3 || pSlot < 0) ? throw new Exception("Invalid slot") : pSlot;
             level = pLevel;
-
         }
 
         /*
