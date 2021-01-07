@@ -132,10 +132,13 @@ namespace Testing2018
 
         public void takeDam(int pAmount)
         {
+            // added to make sure negative damage isn't a reality.
+            if (pAmount < 0)
+                pAmount = 0;
+
             if ((curProt - pAmount) < 0)
-            {
                 curProt = 0;
-            }
+
             else
             {
                 curProt -= pAmount;
@@ -150,14 +153,16 @@ namespace Testing2018
 
         public void repair(int pAmount)
         {
+            // added to make sure negative damage isn't a reality.
+            if (pAmount < 0)
+                pAmount = 0;
+
             if ((curProt + pAmount) > maxProt)
-            {
                 curProt = maxProt;
-            }
+
             else
-            {
                 curProt = curProt + pAmount;
-            }
+            
         }
     }
 }

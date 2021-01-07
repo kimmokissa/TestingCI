@@ -144,22 +144,21 @@ namespace ArmourTester
         [TestMethod]
         public void repair_NegativeRepair_ReturnsEqual()
         {
-            // Tests if the repair method takes negative int or not.
+            // Tests if the repair method repairs with negative int, it should not.
 
             Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
 
             ar.repair(-100);
 
             int condition = ar.getCurProt();
-            Assert.AreEqual(0, condition);
+            Assert.AreEqual(100, condition);
         }
 
 
-        // Especially in this case, one could get higher current prot than the max prot, Makes no sense.
         [TestMethod]
-        public void repair_NegativeDamage_ReturnsEqual()
+        public void takeDam_NegativeDamage_ReturnsEqual()
         {
-            // Tests if the repair method takes negative int or not.
+            // Tests if the takeDam method with negative int, it should not.
 
             Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
 
@@ -167,7 +166,7 @@ namespace ArmourTester
             ar.takeDam(-100);
 
             int condition = ar.getCurProt();
-            Assert.AreEqual(200, condition);
+            Assert.AreEqual(100, condition);
         }
 
     }
