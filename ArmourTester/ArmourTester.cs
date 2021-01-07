@@ -7,7 +7,6 @@ namespace ArmourTester
     [TestClass]
     public class ArmourTester
     {
-
         [TestMethod]
         public void getCondition_TakesDamageAndRepair_ReturnsMint()
         {
@@ -136,16 +135,10 @@ namespace ArmourTester
             Assert.AreEqual(2, level);
         }
 
-        // The test below are trivial and makes one think how the Armour.cs is implemented, if one is allowed
-        // to do negative repairing or negative damage intentionally or accidentally, what is the point of
-        // having two separate methods, it could just be replaced with a single method that handles 
-        // the damage taking and repairing, something like "changeCondition" method.
-
         [TestMethod]
         public void repair_NegativeRepair_ReturnsEqual()
         {
             // Tests if the repair method repairs with negative int, it should not.
-
             Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
 
             ar.repair(-100);
@@ -159,15 +152,37 @@ namespace ArmourTester
         public void takeDam_NegativeDamage_ReturnsEqual()
         {
             // Tests if the takeDam method with negative int, it should not.
-
             Armour ar = new Armour("Rautahanska", "Raudasta tehty käsine", 100, 2, 2);
-
 
             ar.takeDam(-100);
 
             int condition = ar.getCurProt();
             Assert.AreEqual(100, condition);
         }
+        [TestMethod]
+        public void Armour_MakeArmorWithNegativeProt_ThrowsException()
+        {
+            // Tests that if making armor with less than 0 protection throws exception.
 
+            var ex = Assert.ThrowsException<Exception>(() => new Armour("Rautahanska", "Raudasta tehty käsine", -100, 2, 2));
+            Assert.AreEqual(ex.Message, "Cant make armor with negative protection");
+        }
+        [TestMethod]
+        public void Armour_MakeArmorWithWrongSlots_ThrowsException()
+        {
+            // Tests that if making armor with wrong slots throws exception
+
+            var ex = Assert.ThrowsException<Exception>(() => new Armour("Rautahanska", "Raudasta tehty käsine", 100, 7, 2));
+            Assert.AreEqual(ex.Message, "Invalid slot");
+        }
+        [TestMethod]
+        public void Armour_MakeArmorWithoutName_ThrowsException()
+        {
+            // Tests that if making armor no name throws exception
+
+            var ex = Assert.ThrowsException<Exception>(() => new Armour("", "Raudasta tehty käsine", 100, 3, 2));
+            Assert.AreEqual(ex.Message, "Name of the item cant be empty");
+        }
     }
+
 }

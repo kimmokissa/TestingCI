@@ -35,12 +35,12 @@ namespace Testing2018
          */
         public Armour(String pName, String pDesc, int pProt, int pSlot, int pLevel)
         {
-
-            name = pName;
+            // Added checks to name, maxProt and slot, throws exception if not "valid".
+            name = (string.IsNullOrEmpty(pName)) ? throw new Exception("Name of the item cant be empty") : pName;
             desc = pDesc;
-            maxProt = pProt;
+            maxProt = (pProt < 0) ? throw new Exception("Cant make armor with negative protection") : pProt;
             curProt = pProt;
-            slot = pSlot;
+            slot = (pSlot > 3 || pSlot < 0) ? throw new Exception("Invalid slot") : pSlot;
             level = pLevel;
 
         }
